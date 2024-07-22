@@ -15,6 +15,7 @@ public class StoreLoginPage {
     By email = By.cssSelector("input#field-email");
     By password = By.cssSelector("input#field-password");
     By loginBtn = By.cssSelector("button#submit-login");
+    By createAccountLink = By.linkText("No account? Create one here");
 
     public WebElement getEmail() {
         return driver.findElement(email);
@@ -26,5 +27,9 @@ public class StoreLoginPage {
 
     public WebElement getLoginBtn() {
         return driver.findElement(loginBtn);
+    }
+
+    public WebElement getCreateAccountLink() {
+        return driver.findElement(createAccountLink);
     }
 }
