@@ -1,10 +1,14 @@
 package pageObjects;
 
+import base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class StoreHomepage {
+import java.io.IOException;
+
+public class StoreHomepage extends BasePage {
+
     public WebDriver driver;
 
     By productOne = By.linkText("Hummingbird Printed T-Shirt");
@@ -17,43 +21,52 @@ public class StoreHomepage {
     By productEight = By.linkText("Mug Today Is A Good Day");
     By signinBtn = By.cssSelector(".user-info [title]");
 
-    public StoreHomepage(WebDriver driver) {
-        this.driver = driver;
+    public StoreHomepage() throws IOException {
+        super();
     }
 
-    public WebElement getProdOne() {
+    public WebElement getProdOne() throws IOException {
+        this.driver = getDriver();
         return driver.findElement(productOne);
     }
 
-    public WebElement getProdTwo() {
+    public WebElement getProdTwo() throws IOException {
+        this.driver = getDriver();
         return driver.findElement(productTwo);
     }
 
-    public WebElement getProdThree() {
+    public WebElement getProdThree() throws IOException {
+        this.driver = getDriver();
         return driver.findElement(productThree);
     }
 
-    public WebElement getProdFour() {
+    public WebElement getProdFour() throws IOException {
+        this.driver = getDriver();
         return driver.findElement(productFour);
     }
 
-    public WebElement getProdFive() {
+    public WebElement getProdFive() throws IOException {
+        this.driver = getDriver();
         return driver.findElement(productFive);
     }
 
-    public WebElement getProdSix() {
+    public WebElement getProdSix() throws IOException {
+        this.driver = getDriver();
         return driver.findElement(productSix);
     }
 
-    public WebElement getProdSeven() {
+    public WebElement getProdSeven() throws IOException {
+        this.driver = getDriver();
         return driver.findElement(productSeven);
     }
 
-    public WebElement getProdEight() {
+    public WebElement getProdEight() throws IOException {
+        this.driver = getDriver();
         return driver.findElement(productEight);
     }
 
-    public WebElement getSigninBtn() {
+    public WebElement getSigninBtn() throws IOException {
+        this.driver = getDriver();
         return driver.findElement(signinBtn);
     }
 }

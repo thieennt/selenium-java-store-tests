@@ -1,15 +1,18 @@
 package pageObjects;
 
+import base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class StoreLoginPage {
+import java.io.IOException;
+
+public class StoreLoginPage extends BasePage {
 
     public WebDriver driver;
 
-    public StoreLoginPage(WebDriver driver) {
-        this.driver = driver;
+    public StoreLoginPage() throws IOException {
+        super();
     }
 
     By email = By.cssSelector("input#field-email");
@@ -17,19 +20,23 @@ public class StoreLoginPage {
     By loginBtn = By.cssSelector("button#submit-login");
     By createAccountLink = By.linkText("No account? Create one here");
 
-    public WebElement getEmail() {
+    public WebElement getEmail() throws IOException {
+        this.driver = getDriver();
         return driver.findElement(email);
     }
 
-    public WebElement getPassword() {
+    public WebElement getPassword() throws IOException {
+        this.driver = getDriver();
         return driver.findElement(password);
     }
 
-    public WebElement getLoginBtn() {
+    public WebElement getLoginBtn() throws IOException {
+        this.driver = getDriver();
         return driver.findElement(loginBtn);
     }
 
-    public WebElement getCreateAccountLink() {
+    public WebElement getCreateAccountLink() throws IOException {
+        this.driver = getDriver();
         return driver.findElement(createAccountLink);
     }
 }
